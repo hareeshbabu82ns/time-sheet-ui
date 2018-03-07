@@ -9,6 +9,7 @@ import "semantic-ui-css/semantic.min.css";
 
 import App from "./App";
 import timeSheetKeducer from "./keducers";
+import { startFetchingAuthUser } from "./keducers/user";
 
 import registerServiceWorker from "./registerServiceWorker";
 
@@ -23,6 +24,8 @@ const AppWrapper = () => (
     <App />
   </Provider>
 );
+
+store.dispatch(startFetchingAuthUser());
 
 ReactDOM.render(<AppWrapper />, document.getElementById("root"));
 
